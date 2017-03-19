@@ -23,17 +23,17 @@ create table if not exists email
     foreign key (person_id) references person (id) on delete cascade
 );
 
-create table if not exists group
+create table if not exists grouping
 (
     id          bigint not null generated always as identity,
     name        varchar(200) not null unique
 );
 
-create table if not exists person_group
+create table if not exists person_grouping
 (
     person_id   bigint not null,
-    group_id    bignint not null,
-    primary key (person_id, group_id),
+    grouping_id bigint not null,
+    primary key (person_id, grouping_id),
     foreign key (person_id) references person (id) on delete cascade,
-    foreign key (group_id) references group (id) on delete cascade
+    foreign key (grouping_id) references grouping (id) on delete cascade
 );
