@@ -1,4 +1,4 @@
-package mycontacts;
+package mycontacts.data;
 
 import java.util.Date;
 
@@ -52,13 +52,13 @@ public class Person implements Comparable<Person>
     {
         this.birthdate = birthdate;
     }
-    
+
     @Override
     public String toString()
     {
         return firstName + " " + lastName + ((birthdate != null) ? " " + birthdate.toString() : "");
     }
-    
+
     @Override
     public boolean equals(Object obj)
     {
@@ -94,19 +94,19 @@ public class Person implements Comparable<Person>
     public int compareTo(Person o)
     {
         int v0 = lastName.compareTo(o.lastName);
-        
-        if(v0 == 0)
+
+        if (v0 == 0)
         {
             int v1 = firstName.compareTo(o.firstName);
-            
-            if(v1 == 0 && birthdate != null)
+
+            if (v1 == 0 && birthdate != null)
             {
                 return birthdate.compareTo(o.birthdate);
             }
-            
+
             return v1;
         }
-        
+
         return v0;
     }
 }

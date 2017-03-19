@@ -1,4 +1,4 @@
-package mycontacts;
+package mycontacts.data;
 
 public class DAOException extends Exception
 {
